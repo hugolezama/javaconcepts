@@ -14,8 +14,13 @@ public class ImmutableClassTest {
     System.out.println("Age: " + immutableClass.getAge());
     System.out.println("Hobbies: " + immutableClass.getHobbies());
 
-    hobbies.add("Limpiar");
-    // No debe incluir Limpiar
+    hobbies.add("Clean");
+    // Should not include "Clean"
+    System.out.println("Hobbies: " + immutableClass.getHobbies());
+
+    hobbies = immutableClass.getHobbies();
+    hobbies.add("Workout");
+    // Should not include "Workout"
     System.out.println("Hobbies: " + immutableClass.getHobbies());
   }
 }
