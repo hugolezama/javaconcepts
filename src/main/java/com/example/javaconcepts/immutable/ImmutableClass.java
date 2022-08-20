@@ -1,20 +1,20 @@
-package com.example.javaconcepts.inmutable;
+package com.example.javaconcepts.immutable;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public final class ImmutableClass {
 
   private final int age;
   private final String name;
-  private final List<String> hobbies;
+  private final Set<String> hobbies;
 
 
-  public ImmutableClass(int age, String name, List<String> hobbies) {
+  public ImmutableClass(int age, String name, Set<String> hobbies) {
     this.age = age;
     this.name = name;
     // Assign a copy to avoid referring to the same object
-    this.hobbies = new ArrayList<>(hobbies);
+    this.hobbies = new HashSet<>(hobbies);
   }
 
   public int getAge() {
@@ -25,9 +25,9 @@ public final class ImmutableClass {
     return name;
   }
 
-  public List<String> getHobbies() {
+  public Set<String> getHobbies() {
     // Return a copy instead of a reference to original list to make it immutable
-    return new ArrayList<>(hobbies);
+    return new HashSet<>(hobbies);
   }
 
 
